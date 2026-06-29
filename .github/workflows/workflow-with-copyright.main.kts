@@ -18,7 +18,7 @@
 @file:DependsOn("io.github.typesafegithub:github-workflows-kt:3.7.0")
 
 @file:Repository("https://bindings.krzeminski.it/")
-@file:DependsOn("fwilhe2:setup-kotlin___major:[v1,v2-alpha)")
+@file:DependsOn("fwilhe2:setup-kotlin___major:[v2,v3-alpha)")
 
 import io.github.typesafegithub.workflows.actions.fwilhe2.SetupKotlin
 import io.github.typesafegithub.workflows.domain.Concurrency
