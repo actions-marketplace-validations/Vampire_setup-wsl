@@ -287,15 +287,6 @@ workflowWithCopyright(
         runsOn = RunnerType.Custom(expr("matrix.environment")),
         _customArguments = _customArguments
     ) {
-        // work-around for https://github.com/actions/cache/issues/1622
-        // and https://github.com/actions/runner-images/issues/14081
-        run(
-            name = "Install zstd on windows-11-arm",
-            shell = Cmd,
-            command = "choco install zstandard",
-            condition = "matrix.environment == 'windows-11-arm'"
-        )
-
         uses(
             name = "Restore built artifacts from cache",
             action = CacheRestore(
