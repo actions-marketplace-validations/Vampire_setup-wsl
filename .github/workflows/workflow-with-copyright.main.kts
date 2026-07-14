@@ -15,7 +15,7 @@
  */
 
 @file:Repository("https://repo.maven.apache.org/maven2/")
-@file:DependsOn("io.github.typesafegithub:github-workflows-kt:3.7.0")
+@file:DependsOn("io.github.typesafegithub:github-workflows-kt:4.0.0")
 
 @file:Repository("https://bindings.krzeminski.it/")
 @file:DependsOn("fwilhe2:setup-kotlin___major:[v2,v3-alpha)")
@@ -27,7 +27,6 @@ import io.github.typesafegithub.workflows.dsl.WorkflowBuilder
 import io.github.typesafegithub.workflows.dsl.expressions.Contexts.github
 import io.github.typesafegithub.workflows.dsl.expressions.expr
 import io.github.typesafegithub.workflows.dsl.workflow
-import io.github.typesafegithub.workflows.yaml.CheckoutActionVersionSource.InferFromClasspath
 import io.github.typesafegithub.workflows.yaml.DEFAULT_CONSISTENCY_CHECK_JOB_CONFIG
 import io.github.typesafegithub.workflows.yaml.Preamble.WithOriginalAfter
 import java.io.File
@@ -49,7 +48,6 @@ fun workflowWithCopyright(
             cancelInProgress = true
         ),
         consistencyCheckJobConfig = DEFAULT_CONSISTENCY_CHECK_JOB_CONFIG.copy(
-            checkoutActionVersion = InferFromClasspath(),
             additionalSteps = {
                 // work-around for https://youtrack.jetbrains.com/issue/KT-86352 until GHA agents bundle 2.4.10
                 uses(
