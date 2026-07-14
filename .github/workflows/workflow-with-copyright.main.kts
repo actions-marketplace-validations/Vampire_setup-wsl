@@ -51,10 +51,10 @@ fun workflowWithCopyright(
         consistencyCheckJobConfig = DEFAULT_CONSISTENCY_CHECK_JOB_CONFIG.copy(
             checkoutActionVersion = InferFromClasspath(),
             additionalSteps = {
-                // work-around for https://youtrack.jetbrains.com/issue/KT-86352
+                // work-around for https://youtrack.jetbrains.com/issue/KT-86352 until GHA agents bundle 2.4.10
                 uses(
-                    name = "Install Kotlin 2.3.10",
-                    action = SetupKotlin(version = "2.3.10")
+                    name = "Install Kotlin 2.4.10",
+                    action = SetupKotlin(version = "2.4.10")
                 )
             }
         ),
